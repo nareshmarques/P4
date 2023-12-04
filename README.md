@@ -48,10 +48,10 @@ ejercicios indicados.
   Seguidamente, repasaremos los comandos empleados en el script y las opciones que hemos escogido:
 
   - `sox` : Editar ficheros de audio
-    * -t : Tipo de fichero de audio [*raw*]
+    - -t : Tipo de fichero de audio [*raw*]
     * -e : Codificación del fichero [signed]
     * -b : Tamaño de trama en bits [16 bits]
-    * -  : Redirección del output (pipeline)
+    * -  : Redirección del output (*pipeline*)
         
   - `$X2X` : Convertir datos a distintos formatos
     * +sf : short (2  bytes) --> float (4 bytes)
