@@ -48,10 +48,10 @@ ejercicios indicados.
   Seguidamente, repasaremos los comandos empleados en el script y las opciones que hemos escogido:
 
   - `sox` : Editar ficheros de audio
-    - -t : Tipo de fichero de audio [*raw*]
+    * -t : Tipo de fichero de audio [*raw*]
     * -e : Codificación del fichero [signed]
     * -b : Tamaño de trama en bits [16 bits]
-    * -  : Redirección del output (*pipeline*)
+    *  - : Redirección del output (*pipeline*)
         
   - `$X2X` : Convertir datos a distintos formatos
     * +sf : short (2  bytes) --> float (4 bytes)
@@ -70,6 +70,12 @@ ejercicios indicados.
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
+
+  <img width="588" alt="Captura de pantalla 2023-12-04 a las 12 40 11" src="https://github.com/nareshmarques/P4/assets/118903051/2afdfe1a-6d46-40eb-b6ae-70d21fd611dc">
+
+  El formato de las señales parametrizadas empleado, *fmatrix*, almacena los datos en *nrow* filas y *ncol* columnas, en los que cada fila corresponde a una trama de señal y cada   columna a cada uno de los coeficientes con los que se parametriza la trama.
+  
+  Para obtener el número de columnas, hemos de sumarle 1 al orden de predicción, ya que el primer valor se corresponde a la ganancia. Si queremos ahora obtener el número de         filas, éste se obtendrá usando el comando `perl`. Inicialmente tenemos un conjunto de floats de 4 bytes, para poder realizar el cálculo hacemos una transformación y los pasamos   a ASCII, de modo que se genera un fichero con los valores ASCII, uno en cada fila. A través del comando `wc` *-l* obtenemos el número de filas.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
 
