@@ -33,6 +33,41 @@ ejercicios indicados.
   principal (`sox`, `$X2X`, `$FRAME`, `$WINDOW` y `$LPC`). Explique el significado de cada una de las 
   opciones empleadas y de sus valores.
 
+  El script `wav2lp.sh` se encarga de obtener los coeficientes de predicción lineal (LPC) de una señal de audio en concreto. Para ello hace uso de los programas `SoX` y `SPTK`      (Speech Signal Processing Toolkit).
+
+  En primer lugar, podemos ver como el script requiere de una señal de entrada de tipo *wav* y nos devuelve un archivo de tipo *lp*:
+  
+  <img width="313" alt="Captura de pantalla 2023-12-04 a las 12 00 01" src="https://github.com/nareshmarques/P4/assets/118903051/d6136efe-85f0-4739-914a-27fbd7fbc660">
+
+  A continuación podemos observar la definición de los parámetros que el usuario deberá introducir al invocar el script: número de coeficientes de predicción lineal, fichero de     entrada y fichero de salida. Una vez introducidos éstos se guardarán en sus variables correspondientes:
+
+  <img width="443" alt="Captura de pantalla 2023-12-04 a las 12 05 28" src="https://github.com/nareshmarques/P4/assets/118903051/092849f0-9b96-4255-b8ee-e1f53cc3fd7c">
+
+  Cabe destacar también que al usar `SPTK`, si se dispone de un ordenador con *Ubuntu*, los comandos deberán llevar el prefijo *sptk*, mientras que en ordenadores Apple no será     necesario. 
+
+  Seguidamente, repasaremos los comandos empleados en el script y las opciones que hemos escogido:
+
+  - `sox` : Editar ficheros de audio
+    * -t : Tipo de fichero de audio [*raw*]
+    * -e : Codificación del fichero [signed]
+    * -b : Tamaño de trama en bits [16 bits]
+    * -  : Redirección del output (pipeline)
+        
+  - `$X2X` : Convertir datos a distintos formatos
+    * +sf : short (2  bytes) --> float (4 bytes)
+      
+  - `$FRAME` : Entramar la señal de entrada en distintas tramas con periodo P y longitud L. Puede haber solapamiento
+    * -l : Número de muestras de cada trama (longitud) [240 muestras = 30ms]
+    * -p : Período de cada trama, o muestras de desplazamiento entre tramas [80 muestras = 10ms]
+
+  - `$WINDOW` : Multiplicar cada trama por una ventana, por defecto la de Blackman
+    * -l : Longitud,en muestras, de la ventana de entrada [240 muestras]
+    * -L : Longitud, en muestras, de la ventana de salida [240 muestras]
+ 
+  - `$LPC` : Calcular los coeficientes de predicción lineal, precedidos por el factor de ganancia del predictor
+    * -l : Longitud, en muestras, de la ventana de entrada [240 muestras]
+    * -m : Número de coeficientes del LPC [lo determinamos en base a su orden]
+
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
 
