@@ -79,6 +79,8 @@ ejercicios indicados.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
 
+  El formato *fmatrix* nos permiteguardar los datos de manera más ordenada, porqué tenemos las señales organizadas por tramas y coeficientes de modo que en cada fila de la matriz   hay una trama de la señal y en cada columna se encuentra uno de los coeficientes con los que hemos parametrizado dicha trama. Cabe destacar también que de una matriz podemos      seleccionar las filas o columnas que nos interesen de manera fàcil con la función *cut*, hecho que facilita la interpretación de los resultados.
+
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
 
