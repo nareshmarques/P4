@@ -79,13 +79,18 @@ ejercicios indicados.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
 
-  El formato *fmatrix* nos permiteguardar los datos de manera más ordenada, porqué tenemos las señales organizadas por tramas y coeficientes de modo que en cada fila de la matriz   hay una trama de la señal y en cada columna se encuentra uno de los coeficientes con los que hemos parametrizado dicha trama. Cabe destacar también que de una matriz podemos      seleccionar las filas o columnas que nos interesen de manera fàcil con la función *cut*, hecho que facilita la interpretación de los resultados.
+  El formato *fmatrix* nos permite guardar los datos de manera más ordenada, porqué tenemos las señales organizadas por tramas y coeficientes de modo que en cada fila de la         matriz hay una trama de la señal y en cada columna se encuentra uno de los coeficientes con los que hemos parametrizado dicha trama. Cabe destacar también que de una matriz       podemos seleccionar las filas o columnas que nos interesen de manera fàcil con la función *cut*, hecho que facilita la interpretación de los resultados.
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
+  
+  <img width="723" alt="Captura de pantalla 2023-12-04 a las 16 56 30" src="https://github.com/nareshmarques/P4/assets/118903051/aa1d8295-f90c-4803-9f3e-d68c4634521f">
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
+  
+  <img width="830" alt="Captura de pantalla 2023-12-04 a las 17 11 06" src="https://github.com/nareshmarques/P4/assets/118903051/ffad85de-9228-4864-bfff-2c135b7d3010">
+
 
 ### Extracción de características.
 
@@ -94,6 +99,16 @@ ejercicios indicados.
   
   + Indique **todas** las órdenes necesarias para obtener las gráficas a partir de las señales 
     parametrizadas.
+    
+    En primer lugar, parametrizamos las distintas señales tanto para LP, LPCC y MFCC utilizando el script `run_spkid`:
+
+      `FEAT=lp run_spkid lp`  `FEAT=lpcc run_spkid lpcc` `FEAT=mfcc run_spkid mfcc`
+    
+    A continuación, escogiendo las parametrizaciones de *work/lp/BLOCK01/SES017*, convertimos a texto sus coeficientes 2 y 3:
+
+      
+
+
   + ¿Cuál de ellas le parece que contiene más información?
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
