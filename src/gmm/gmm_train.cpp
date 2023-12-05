@@ -74,7 +74,6 @@ int main(int argc, const char *argv[])
 			break;
 		default:
 			gmm.random_init(data, nmix);
-			;
 	}
 
 	/// \TODO Apply EM to estimate GMM parameters (complete the funcion in gmm.cpp)
