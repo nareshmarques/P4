@@ -168,13 +168,24 @@ ejercicios indicados.
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
 
-  |                        | LP   | LPCC | MFCC |
-  |------------------------|:----:|:----:|:----:|
-  | &rho;<sub>x</sub>[2,3] |      |      |      |
+  Empleamos los comandos siguientes para obtener los coeficientes 2 y 3 de cada parametrización (LP, LPC, MFCC):
+
+  <img width="848" alt="Captura de pantalla 2023-12-11 a las 18 45 12" src="https://github.com/nareshmarques/P4/assets/118903051/35a65dba-d9c1-4454-98dc-27213ca4a17d">
+
+
+  |                        |     LP    |   LPCC   |    MFCC   |
+  |------------------------|:---------:|:--------:|:---------:|
+  | &rho;<sub>x</sub>[2,3] | -0.872284 | 0.150782 | -0.146628 |
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
+ 
+  Los valores obtenidos para &rho;<sub>x</sub>[2,3] nos indican el nivel de correlación entre los coeficientes 2 y 3, donde el que tiene una mayor correlación es aquel que tiene
+  un valor que se acerca más al 1. Si nos fijamos en las tabla superior, podemos ver como (en valor absoluto) para LP obtenemos un valor más cercano a 1, por lo que éste aporta     menos información. Por otro lado, LPCC y MFCC son menores y están más cerca del 0, por lo que sus coeficientes son más incorrelados entre sí y, de este modo, podemos decir que
+  aportan más información. También, podemos ver como los coeficientes MFCC son ligeramente más incorrelados que los de LPCC. Dicho esto, los resultados pearson concuerdan con los   resultados gráficosobtenidos anteriormente.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
+  - LPC: 8-14 coeficientes
+  - MFCC: 13 coeficientes, 24-40 filtros
 
 ### Entrenamiento y visualización de los GMM.
 
