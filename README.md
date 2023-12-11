@@ -172,6 +172,7 @@ ejercicios indicados.
 
   <img width="848" alt="Captura de pantalla 2023-12-11 a las 18 45 12" src="https://github.com/nareshmarques/P4/assets/118903051/35a65dba-d9c1-4454-98dc-27213ca4a17d">
 
+
   |                        |     LP    |   LPCC   |    MFCC   |
   |------------------------|:---------:|:--------:|:---------:|
   | &rho;<sub>x</sub>[2,3] | -0.872284 | 0.150782 | -0.146628 |
