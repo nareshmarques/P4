@@ -79,11 +79,19 @@ ejercicios indicados.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
 
+  El formato *fmatrix* nos permite guardar los datos de manera más ordenada, porqué tenemos las señales organizadas por tramas y coeficientes de modo que en cada fila de la         matriz hay una trama de la señal y en cada columna se encuentra uno de los coeficientes con los que hemos parametrizado dicha trama. Cabe destacar también que de una matriz       podemos seleccionar las filas o columnas que nos interesen de manera fàcil con la función *cut*, hecho que facilita la interpretación de los resultados.
+
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
+  
+  <img width="723" alt="Captura de pantalla 2023-12-04 a las 16 56 30" src="https://github.com/nareshmarques/P4/assets/118903051/aa1d8295-f90c-4803-9f3e-d68c4634521f">
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
+  
+  <img width="725" alt="image" src="https://github.com/nareshmarques/P4/assets/118903051/4b9de2a9-920a-444e-b1b0-733381a16cac">
+
+
 
 ### Extracción de características.
 
@@ -92,7 +100,70 @@ ejercicios indicados.
   
   + Indique **todas** las órdenes necesarias para obtener las gráficas a partir de las señales 
     parametrizadas.
+    
+    En primer lugar, parametrizamos las distintas señales tanto para LP, LPCC y MFCC utilizando el script `run_spkid`:
+
+      `FEAT=lp run_spkid lp`  `FEAT=lpcc run_spkid lpcc` `FEAT=mfcc run_spkid mfcc`
+    
+    A continuación, escogiendo las parametrizaciones de *work/lp/BLOCK01/SES017*, convertimos a texto sus coeficientes 2 y 3:
+
+    <img width="1001" alt="Captura de pantalla 2023-12-11 a las 14 44 31" src="https://github.com/nareshmarques/P4/assets/118903051/ccdf84dd-a601-4e59-9953-740378884558">
+
+    Finalmente, empleamos el siguiente script de Matlab para representar las gráficas a partir de los ficheros de texto:
+
+    ```Matlab
+    %LP
+
+    datos_lp = load('lp_2_3.txt');
+    coef_2_lp = datos_lp(:,1);
+    coef_3_lp = datos_lp(:,2);
+    sz=5;
+    
+    subplot(3,1,1);
+    scatter(coef_2_lp, coef_3_lp, sz, 'filled', 'MarkerEdgeColor',[0 .5 .5],'MarkerFaceColor',[0 .7 .7],'LineWidth',0.5);
+    title('Parametrización LP')
+    xlabel('Coeficiente 2')
+    ylabel('Coeficiente 3')
+    grid on
+
+    %LPCC
+
+    datos_lpcc = load('lpcc_2_3.txt');
+    coef_2_lpcc = datos_lpcc(:,1);
+    coef_3_lpcc = datos_lpcc(:,2);
+    sz=5;
+    
+    subplot(3,1,2);
+    scatter(coef_2_lpcc, coef_3_lpcc, sz, 'filled','MarkerEdgeColor',[.3 0 .5],'MarkerFaceColor',[.3 0 .7],'LineWidth',0.5);
+    title('Parametrización LPCC')
+    xlabel('Coeficiente 2')
+    ylabel('Coeficiente 3')
+    grid on
+
+    %MFCC
+
+    datos_mfcc = load('mfcc_2_3.txt');
+    coef_2_mfcc = datos_mfcc(:,1);
+    coef_3_mfcc = datos_mfcc(:,2);
+    sz=5;
+    
+    subplot(3,1,3);
+    scatter(coef_2_mfcc, coef_3_mfcc, sz, 'filled', 'MarkerEdgeColor',[.5 .2 0],'MarkerFaceColor',[.7 .2 0],'LineWidth',0.5);
+    title('Parametrización MFCC')
+    xlabel('Coeficiente 2')
+    ylabel('Coeficiente 3')
+    grid on
+    ```
+
+    Hemos obtenido las siguientes gráficas de la dependencia entre los coeficientes 2 y 3 de cada parametrización:
+
+    <img width="1187" alt="image" src="https://github.com/nareshmarques/P4/assets/118903051/d884d4df-ff1f-458c-b9a4-0493b290b523">
+
+
   + ¿Cuál de ellas le parece que contiene más información?
+ 
+    Se obtiene mayor información de aquella gráfica en la que sus coeficientes esten más incorrelados entre ellos. En nuestro caso podemos ver como en el caso de LPCC y MFCC,
+    ambos tienen una distribución más dispersa, aunque se puede observar menos correlación entre coeficientes en el caso de MFCC
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
