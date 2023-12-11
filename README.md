@@ -161,6 +161,9 @@ ejercicios indicados.
 
 
   + ¿Cuál de ellas le parece que contiene más información?
+ 
+    Se obtiene mayor información de aquella gráfica en la que sus coeficientes esten más incorrelados entre ellos. En nuestro caso podemos ver como en el caso de LPCC y MFCC,
+    ambos tienen una distribución más dispersa, aunque se puede observar menos correlación entre coeficientes en el caso de MFCC
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
