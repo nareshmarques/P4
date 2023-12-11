@@ -3,11 +3,6 @@
 # Make pipeline return code the last non-zero one or zero if all the commands return zero.
 set -o pipefail
 
-## \file
-## \TODO This file implements a very trivial feature extraction; use it as a template for other front ends.
-## 
-## Please, read SPTK documentation and some papers in order to implement more advanced front ends.
-
 # Base name for temporary files
 base=/tmp/$(basename $0).$$ 
 
