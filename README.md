@@ -89,7 +89,8 @@ ejercicios indicados.
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
   
-  <img width="830" alt="Captura de pantalla 2023-12-04 a las 17 11 06" src="https://github.com/nareshmarques/P4/assets/118903051/ffad85de-9228-4864-bfff-2c135b7d3010">
+  <img width="725" alt="image" src="https://github.com/nareshmarques/P4/assets/118903051/4b9de2a9-920a-444e-b1b0-733381a16cac">
+
 
 
 ### Extracción de características.
