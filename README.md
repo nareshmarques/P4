@@ -172,7 +172,6 @@ ejercicios indicados.
 
   <img width="848" alt="Captura de pantalla 2023-12-11 a las 18 45 12" src="https://github.com/nareshmarques/P4/assets/118903051/35a65dba-d9c1-4454-98dc-27213ca4a17d">
 
-
   |                        |     LP    |   LPCC   |    MFCC   |
   |------------------------|:---------:|:--------:|:---------:|
   | &rho;<sub>x</sub>[2,3] | -0.872284 | 0.150782 | -0.146628 |
@@ -194,9 +193,30 @@ Complete el código necesario para entrenar modelos GMM.
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
 
+  Mediante el comando siguiente obtenemos el gráfico que se nos pide:
+
+  <img width="627" alt="Captura de pantalla 2023-12-12 a las 12 13 40" src="https://github.com/nareshmarques/P4/assets/118903051/6318802e-9adf-453e-a354-784f3385d258">
+
+  <img width="564" alt="image" src="https://github.com/nareshmarques/P4/assets/118903051/9d38adf1-b8e2-4cbe-8ac0-e0b5d0fe51fc">
+
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.
+
+  Al igual que en la pregunta anterior, a continuación se muestra el comando empleado y la gráfica resultante:
+
+  <img width="954" alt="Captura de pantalla 2023-12-12 a las 12 18 52" src="https://github.com/nareshmarques/P4/assets/118903051/61bdf14f-2cab-408a-9945-e6ccca5d414a">
+
+  <img width="546" alt="image" src="https://github.com/nareshmarques/P4/assets/118903051/9b13bd16-c968-4146-8d17-73410b6cf934">
+
+  Ahora, si utilizamos un locutor distinto obtenemos los siguientes resultados:
+  
+  <img width="953" alt="Captura de pantalla 2023-12-12 a las 12 21 06" src="https://github.com/nareshmarques/P4/assets/118903051/ca82d02d-ae0e-48d8-8650-fadfbd499c61">
+
+  <img width="559" alt="Captura de pantalla 2023-12-12 a las 12 20 50" src="https://github.com/nareshmarques/P4/assets/118903051/85113462-0061-4acc-91e9-c34356d03de0">
+
+  Podemos ver como en la penútlima gráfica el locutor está mejor modelado que en el último caso. Ésto se debe a que el modelo GMM empleado es el del primer locutor, por lo que      sus muestras se adaptan mejor a éste. El caso en el que el locutor y modelo no coinciden hay más muestras que se encuentran fuera del área roja (modelo). 
+
 
 ### Reconocimiento del locutor.
 
