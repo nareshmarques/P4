@@ -26,7 +26,9 @@ float verify(const GMM &gmm_candidate, const fmatrix &dat)
 
 	//TODO: implement verification score based on gmm of the candidate
 	// DONE
-	float score = gmm_candidate.logprob(dat);
+	
+	float score = 0.0F;
+	score = gmm_candidate.logprob(dat);
 	return score;
 }
 
@@ -40,6 +42,7 @@ float verify(const GMM &gmm_candidate, const GMM & gmm_world, const fmatrix &dat
 	  The decision is based on the returned value
 	 */
 	//\DONE
+
 	lprobcand = gmm_candidate.logprob(dat);
 	lprobbackground = gmm_world.logprob(dat);
 	float score = lprobcand - lprobbackground;
