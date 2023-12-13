@@ -17,10 +17,11 @@ if [[ $# != 4 ]]; then
    exit 1
 fi
 
-mfcc_order=$1
-melfilter_bank_order=$2
-inputfile=$3
-outputfile=$4
+fm=$1
+mfcc_order=$2
+melfilter_bank_order=$3
+inputfile=$4
+outputfile=$5
 
 UBUNTU_SPTK=0
 if [[ $UBUNTU_SPTK == 1 ]]; then
@@ -39,7 +40,7 @@ fi
 
 # Main command for feature extration
 sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 | 
-   $MFCC -l 240 -m $mfcc_order -n $melfilter_bank_order -s 8 -w 0 > $base.mfcc || exit 1
+   $MFCC -s $fm -l 180 -m $mfcc_order -n $melfilter_bank_order > $base.mfcc || exit 1
    
 
 # Our array files need a header with the number of cols and rows:
