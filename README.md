@@ -252,6 +252,26 @@ Complete el código necesario para realizar verificación del locutor y optimice
   de verificación de SPEECON. La tabla debe incluir el umbral óptimo, el número de falsas alarmas y de
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
+
+  - `LP`:
+ 
+    <img width="333" alt="Captura de pantalla 2023-12-30 a las 11 36 50" src="https://github.com/nareshmarques/P4/assets/118903051/7b0dd58b-8d7e-4a9b-85ef-5425c9d2c770">
+
+ - `LPCC`:
+
+   <img width="332" alt="Captura de pantalla 2023-12-30 a las 11 36 58" src="https://github.com/nareshmarques/P4/assets/118903051/3c799f01-2fb6-4e5f-9ec7-f44b855c1535">
+
+  - `MFCC`:
+
+    <img width="331" alt="Captura de pantalla 2023-12-30 a las 11 37 23" src="https://github.com/nareshmarques/P4/assets/118903051/5ebf513f-d19e-40d2-908f-a5d60ea76e84">
+
+
+  |                     |     LP    |   LPCC   |    MFCC   |
+  |---------------------|:---------:|:--------:|:---------:|
+  | Cost Detection      |    34.6   |   4.6    |     9.8   |
+
+  Debido a que `LPCC` nos da mejores resultados que `MFCC` usaremos el primero para presentar los resultados finales.
+  
  
 ### Test final
 
