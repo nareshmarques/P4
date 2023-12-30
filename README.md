@@ -257,7 +257,7 @@ Complete el código necesario para realizar verificación del locutor y optimice
  
     <img width="333" alt="Captura de pantalla 2023-12-30 a las 11 36 50" src="https://github.com/nareshmarques/P4/assets/118903051/7b0dd58b-8d7e-4a9b-85ef-5425c9d2c770">
 
- - `LPCC`:
+  - `LPCC`:
 
    <img width="332" alt="Captura de pantalla 2023-12-30 a las 11 36 58" src="https://github.com/nareshmarques/P4/assets/118903051/3c799f01-2fb6-4e5f-9ec7-f44b855c1535">
 
