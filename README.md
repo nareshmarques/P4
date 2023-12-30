@@ -236,6 +236,7 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
   - `MFCC`:
     
     <img width="582" alt="Captura de pantalla 2023-12-30 a las 11 17 57" src="https://github.com/nareshmarques/P4/assets/118903051/4b81ce50-03b5-4de7-984b-5dec23c528e2">
+    
 
   |                     |     LP    |   LPCC   |    MFCC   |
   |---------------------|:---------:|:--------:|:---------:|
